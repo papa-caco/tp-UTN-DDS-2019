@@ -1,0 +1,170 @@
+{
+  "Headline": {
+    "EffectiveDate": "2020-02-22T07:00:00-03:00",
+    "EffectiveEpochDate": 1582365600,
+    "Severity": 4,
+    "Text": "Agradable este fin de semana",
+    "Category": "mild",
+    "EndDate": null,
+    "EndEpochDate": null,
+    "MobileLink": "http://m.accuweather.com/es/ar/avellaneda/7033/extended-weather-forecast/7033?unit=c&lang=es-ar",
+    "Link": "http://www.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?unit=c&lang=es-ar"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2020-02-21T07:00:00-03:00",
+      "EpochDate": 1582279200,
+      "Temperature": {
+        "Minimum": {
+          "Value": 11.7,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 22.2,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 3,
+        "IconPhrase": "Parcialmente soleado",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 33,
+        "IconPhrase": "Despejado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=1&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=1&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2020-02-22T07:00:00-03:00",
+      "EpochDate": 1582365600,
+      "Temperature": {
+        "Minimum": {
+          "Value": 16.7,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 21.1,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 1,
+        "IconPhrase": "Soleado",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Parcialmente nublado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=2&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=2&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2020-02-23T07:00:00-03:00",
+      "EpochDate": 1582452000,
+      "Temperature": {
+        "Minimum": {
+          "Value": 18.9,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 25,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Parcialmente nublado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=3&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=3&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2020-02-24T07:00:00-03:00",
+      "EpochDate": 1582538400,
+      "Temperature": {
+        "Minimum": {
+          "Value": 20.2,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 28.5,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 1,
+        "IconPhrase": "Soleado",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 36,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=4&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=4&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2020-02-25T07:00:00-03:00",
+      "EpochDate": 1582624800,
+      "Temperature": {
+        "Minimum": {
+          "Value": 16.7,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 28.7,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Parcialmente nublado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=5&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/avellaneda/7033/daily-weather-forecast/7033?day=5&unit=c&lang=es-ar"
+    }
+  ]
+}

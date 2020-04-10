@@ -1,0 +1,143 @@
+{{#partial "login"}}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Nueva Prenda</title>
+
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="public/add.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="col-sm-10 text-center">
+			<h4>Agregar nueva prenda - <b>{{userName}}</b></h4>
+		</div>
+		<div class="col-sm-10" id="maincoint">
+			<div class="modal-content" id="add-main">
+				<form method="POST" action="/altaprenda" class="needs-validation" id="add-prenda" novalidate>
+
+					<b><span id="tag">  Nombre</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+								<input type="text" class="form-control" name="nombre" id="nombre" value="{{nombre}}" placeholder="Ej: remera adidas azul de mangas cortas" required>
+						</div>
+					</div>
+					</br>
+					<b><span id="tag">  Tipo</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="tipo" name="tipo" required>
+							{{#each tiposPrendas}}
+									<option value="{{tipo}}">{{tipo}}</option>
+
+								{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Categoria</span></b>
+					</br>
+					<div class="col-sm-10">
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="categoria" name="categoria" required>
+							{{#each categoriasTipos}}
+									<option value="{{categoria}}">{{categoria}}</option>
+
+								{{/each}}
+						</select>
+					</div>
+					</div>
+					</br>
+					<b><span id="tag">  Uso</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="usoPrenda" name="usoPrenda" required>
+							{{#each usosPrendas}}
+									<option value="{{usoPrenda}}">{{usoPrenda}}</option>
+							{{/each}}
+						</select>
+					</div>
+					</br>
+
+					<b><span id="tag">  Tela</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="material" name="material" required>
+							{{#each telasPrendas}}
+									<option value="{{material}}">{{material}}</option>
+
+								{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Color Principal</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="deColor1" name="deColor1" required>
+							{{#each colorPrendas}}
+									<option value="{{deColor}}">{{deColor}}</option>
+								{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Color Secundario</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="deColor" name="deColor" required>
+							{{#each colorPrendas}}
+									<option value="{{deColor}}">{{deColor}}</option>
+								{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Placard</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="pnombre" name="pnombre" required>
+							{{#each placardsUsuario}}
+									<option value="{{nombre}}">{{nombre}}</option>
+								{{/each}}
+						</select>
+					</div>
+					</br>
+					<div class="col-sm-8 text-center">
+						<div class="row">
+						<div class="col">
+							<a href="/usuario"><button type="button" class="btn btn-danger">Cancelar</button></a>
+						</div>
+						<div="col">
+							<a><button type="submit" class="btn btn-success">Confirmar</button></a>
+						</div>
+					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	{{#block "cargaPrendaError"}}
+	{{/block}}
+	{{#block "cargaPrendaOk"}}
+	{{/block}}
+
+</body>
+<html>
+{{/partial}}
+{{>layout.hbs}}

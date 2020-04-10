@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Nueva Prenda - pagina 2</title>
+	
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+	
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="css/add.css">
+</head>
+
+<body>
+
+				<script>
+				// Example starter JavaScript for disabling form submissions if there are invalid fields
+				(function() {
+				  'use strict';
+				  window.addEventListener('load', function() {
+					// Fetch all the forms we want to apply custom Bootstrap validation styles to
+					var forms = document.getElementsByClassName('needs-validation');
+					// Loop over them and prevent submission
+					var cate=$("#opCat");
+					var tela=$("#opTela");
+					var validation = Array.prototype.filter.call(forms, function(form) {
+					  form.addEventListener('submit', function(event) {
+						if ((form.checkValidity() === false) || (cate.val() === "") || (tela.val()=== "")) {
+						  event.preventDefault();
+						  event.stopPropagation();
+						}else{
+							alert("La prenda fue creada correctamente");
+							setTimeout(function() {window.location = "main.html" });
+						}
+						form.classList.add('was-validated');
+					  }, false);
+					});
+				  }, false);
+				})();
+				
+				
+				</script>
+				
+
+
+	<div class="container">
+		<div class="col-sm-10 text-center">
+			<h1>Agregar nueva prenda</h1>
+		</div>
+		<div class="col-sm-10">
+			<div class="modal-content" id="add-main">
+				<form class="needs-validation" id="add-prenda" novalidate>
+					
+					<b><span id="tag">Color principal</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<input class="form-control" placeholder="Ej: rojo, blanco, azul" required>
+							<div class="invalid-feedback">
+								La prenda debe tener un <b>tipo</b>
+							</div>
+						</div>
+					</div>
+					</br>
+					
+					<b><span id="tag">Color secundario</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<input class="form-control" placeholder="Ej: rojo, blanco, azul">
+							<div class="invalid-feedback">
+								La prenda debe tener un <b>tipo</b>
+							</div>
+						</div>
+					</div>
+					</br>
+					
+					<b><span id="tag">Imagen</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group mb-3">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="inputGroupFile01">
+								<label class="custom-file-label" for="inputGroupFile01">Selecciona  una foto para tu prenda</label>
+							</div>
+						</div>
+					</div>
+					
+					<span id="tag"><b>Formalidad </b><i>(Dress code)</i></span>
+					<div class="col-sm-10">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<label class="input-group-text" for="opCat"><b>Estilo</b></label>
+							</div>
+							<select class="form-control custom-select" id="opCat" required>
+								<option value="" selected hidden>Seleccione un estilo</option>
+								<option value="10">Elegante</option>
+								<option value="8">Elegante sport</option>
+								<option value="5">Casual</option>
+								<option value="3">Deportivo</option>
+								<option value="1">Informal</option>
+							</select>
+							<div class="invalid-feedback">
+								Seleccione un <b>estilo</b> por favor.
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-sm-8 text-center">
+						<div class="row">
+							<div class="col">
+								<a href="main.html"><button type="button" class="btn btn-primary">Cancelar</button></a>
+							</div>
+							<div="col">
+								<a href="add2.html"><button type="submit" class="btn btn-primary">Siguiente</button></a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

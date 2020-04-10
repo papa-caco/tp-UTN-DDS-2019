@@ -1,0 +1,7 @@
+{{#partial "calificarSugerenciaOk"}}
+	<p class="text-center" style="font-size: 1rem;color: red;"><u>Sugerencia#</u><b>{{idSugerencia}}</b> calificada Ok con <u>Calificación#:</u> <b>{{idCalificacion}}</b></p>
+		<div class="container text-center" id="botoncito">
+			<a href="/gestionEventos/getHistoricos?cantidad=10&page=next"><button type="button" class="btn btn-primary btn-sm">Continuar</button></a>
+		</div>
+{{/partial}}
+{{>mostrarCalificacionSugerencia.html}}

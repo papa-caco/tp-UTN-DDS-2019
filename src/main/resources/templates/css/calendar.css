@@ -1,0 +1,53 @@
+body{
+	background: url(../img/wallpaper.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+a#a-menu{
+	color: white;
+}
+
+a#a-cs{
+	color: white;
+}
+.container{
+		margin-left:20px;
+}
+
+.container#botoncito{
+	margin-left:-15px;
+	opacity:.95;
+	padding-top:10px;
+}
+
+.modal-content{
+	margin-top: 15px;
+	margin-left:0px;
+	background-color: #FDFAF5;
+	opacity: .75;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	font-family: "Font Awesome\ 5 free";
+	position:relative;
+	top:-25px;
+}
+
+.carousel-control-next-icon:after
+{
+  content: "\f0a9";
+  font-size: 55px;
+  color: black;
+}
+
+.carousel-control-prev-icon:after {
+  content: "\f0a8";
+  font-size: 55px;
+  color: black;
+}
+

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>QueMePongo?? - Mostrar Actualizacion Calificación</title>
+
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="/public/usuario.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-toggler" id="a-menu"><span class="navbar-toggler-icon"></span> Home</a>
+	</nav>
+    <div class="container">
+    	<div class="modal-content">
+			<h5>{{dateTimeActual}}-<b>{{usuarioActual}}</b></h5>
+			</br>
+			<h5><u>Evento#:</u> <b>{{idEvento}}</b></h5>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Fecha/Hora</th>
+						<th>Ubicación</th>
+						<th>Carácter</th>
+						<th>Actividad</th>
+						<th>Estado</th>
+					</tr>
+				</thead>
+                <tbody>
+					<tr>
+                        <td>{{fechaHoraEvento}}</td>
+						<td>{{ubicacion}}</td>
+						<td>{{caracter}}</td>
+						<td>{{actividad}}</td>
+						<td>{{estadoEvento}}</td>
+					</tr>
+				</tbody>
+			</table>
+			<h5><u>Sugerencia Elegida#:</u> <b>{{idSugerencia}}</b> - <u>Estado:</u> <b>{{estadoSugerencia}}</b> - Calorias Aportadas:</u><b>{{calorias}}</b> - <u>Calificación#:</u><b>{{idCalificacion}}</b></h5>
+			<h5><u><b>Valores:</b></u></h5>
+			<table class="table-sm">
+				<thead>
+					<tr>
+						<th>Global:</th>
+						<th>Cabeza:</th>
+						<th>Cuello:</th>
+						<th>Manos:</th>
+					</tr>
+				</thead>
+                <tbody>
+					<tr>
+                        <td>{{sensacionGlobal}}</td>
+						<td>{{sensacionCabeza}}</td>
+						<td>{{sensacionCuello}}</td>
+						<td>{{sensacionManos}}</td>
+					</tr>
+				</tbody>
+			</table>
+		<div class="container text-center" id="botoncito">
+			<a href="/gestionEventos/getHistoricosCalificados?cantidad=10&page=first"><button type="button" class="btn btn-dark btn-sm">Volver al listado de Eventos Calificados</button></a>
+		</div>
+		{{#block "actualizarCalificacionError"}}
+		{{/block}}
+		{{#block "actualizarCalificacionOk"}}
+		{{/block}}
+		<h5><b><u>Prendas Atuendo:</u></b></h5>
+			<table class="table-sm">
+				<thead>
+					<tr>
+						<th>Descripción</th>
+						<th>Tela</th>
+						<th>Para Uso</th>
+						<th>Color Base</th>
+						<th>Color Secundario</th>
+						<th>Nivel Térmico</th>
+					</tr>
+				</thead>
+                <tbody>
+				    {{#each prendasAtuendo}}
+					<tr>
+						<td>{{nombre}}</td>
+						<td>{{tela}}</td>
+						<td>{{usoPrenda}}</td>
+						<td>{{colorBase}}</td>
+						<td>{{colorSecundario}}</td>
+						<td>{{nivelTermico}}</td>
+					</tr>
+                    {{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	{{#block "usuarioInicio"}}
+	{{/block}}
+	<footer class="footer">
+	<p class="text-center">&copy; 2019 - Sistema QueMePongo - D.D.S. K3151  - Grupo n° 7</p>
+	</footer>
+</body>
+</html>

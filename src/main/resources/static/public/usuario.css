@@ -1,0 +1,47 @@
+body{
+	background: url(wallpaper.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+a#a-menu{
+	color: white;
+}
+
+a#a-cs{
+	color: white;
+}
+.container{
+		margin-left:20px;
+}
+
+.container#botoncito{
+	margin-left:-15px;
+	opacity:.95;
+}
+
+.page-link{
+   position: relative;
+   display: block;
+   padding: 0.5rem 0.75rem;
+   margin-left: -1px;
+   line-height: 1.25;
+   color: #003C00;
+   background-color: #D8EBEB;
+   border: 1px solid #346767;
+}
+
+.container#deshacer{
+	margin-left:0px;
+	opacity:.95;
+}
+
+.modal-content{
+	margin-top: 15px;
+	margin-left:25%;
+	background-color: #FDFAF5;
+	opacity: .75;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+
+}

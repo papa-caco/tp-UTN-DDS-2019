@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+ 		<meta charset="utf-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+   <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="loading-bar.css"/>
+  <script type="text/javascript" src="loading-bar.js"></script>
+  <script src="/public/validaciones.js" >   </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+	    <title>Usuario</title>
+	</head>
+
+	<body>
+		
+		
+	<nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd; margin-bottom: 50px;">
+  <a class="navbar-brand" href="/cliente" title="Inicio cuenta">
+  <img src="https://img.icons8.com/ios/50/000000/user-male-circle.png" style="width: 40px;height: 40px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link"  title="Home Usuario" href="/usuario">
+        <img src="https://img.icons8.com/ios/50/000000/home-page.png" style="width: 40px;height: 40px;"></a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link" href="/prendas" title="Consulta de Prendas" ><img src="https://img.icons8.com/ios/50/000000/help.png" style="width: 40px;height: 40px;"></a>
+      </li>
+    </ul>
+     <a class="nav-link" href="/salir" title="Cerrar sesión" ><img src="https://img.icons8.com/ios/50/000000/cancel.png" style="width: 40px;height: 40px;"></a>
+     
+     <a class="nav-link disabled" href="/" title="Volver a la pagina principal" ><img src="https://img.icons8.com/ios/50/000000/factory.png" style="width: 40px;height: 40px;"></a>
+     
+ 
+ 
+  </div>
+</nav>  	
+	
+
+		
+	{{#block "usuarioInicio"}}
+		{{/block}}		
+		
+		{{#block "estadoHogar"}}
+		{{/block}}	
+		
+		{{#block "consultas"}}
+		{{/block}}			
+		
+		{{#block "optimizador"}}
+		{{/block}}
+		
+		
+		
+			<footer class="footer">
+				<p class="text-center">&copy; 2019 - Sistema QueMePongo - D.D.S. K3151  - Grupo n° 7</p>
+			</footer>
+		
+		
+		
+		<!-- Optional JavaScript -->
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	</body>
+</html>

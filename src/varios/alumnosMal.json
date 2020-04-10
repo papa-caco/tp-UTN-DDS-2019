@@ -1,0 +1,23 @@
+[
+	{
+	"nombre": "Gerardo",
+	"apellido": "Gonzalez",
+	"domicilio": "Boedo 460, Lomas de Zamora",
+	"fechaDeAlta": "2018-02-02"
+	}
+	{
+	"nombre": "Nahuel",
+	"apellido": "Perez",
+	"domicilio": "Manuel Castro 121, Banfield",
+	"fechaDeAlta": "2018-02-02"
+
+	}
+
+	{
+	"nombre": "Jose",
+	"apellido": "Master",
+	"domicilio": "Arenales 390 , Recoleta",
+	"fechaDeAlta":"2018-02-02"
+	}
+]
+

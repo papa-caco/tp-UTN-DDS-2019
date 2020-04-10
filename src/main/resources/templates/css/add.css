@@ -1,0 +1,55 @@
+body{
+	background: url(../img/wallpaper.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+.modal-content{
+	background-color: #FDFAF5;
+	opacity: .75;
+	padding: 0 10px;
+	padding-left: 70px;
+	padding-top: 15px;
+	box-shadow:0px 0px 3px #B29D7B;
+	padding-bottom: 25px;
+}
+
+div#maincoint{
+	padding-left:25px;
+	margin-left:25px;
+}
+
+.form-control{
+	opacity: .95;
+	margin-left: 0;
+}
+
+span#tag{
+	margin-left:15px;
+}
+
+button#b-tipo{
+	background-color: #DDD4C5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

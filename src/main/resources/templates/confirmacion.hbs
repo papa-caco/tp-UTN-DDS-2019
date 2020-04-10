@@ -1,0 +1,11 @@
+{{#each "message"}}
+
+<div class="jumbotron">
+<form action="/usuario" method="GET">
+  <h2>{{message}}</h2>
+		<input class="btn btn-primary btn-lg" type="submit" value="Volver">
+</form>
+
+{{/each}}
+
+{{>usuarioInicio.hbs}}

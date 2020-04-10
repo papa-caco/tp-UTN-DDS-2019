@@ -1,0 +1,172 @@
+{
+  "Headline": {
+    "EffectiveDate": "2019-08-09T01:00:00-03:00",
+    "EffectiveEpochDate": 1565323200,
+    "Severity": 5,
+    "Text": "Previsión de chubascos esta noche a última hora",
+    "Category": "rain",
+    "EndDate": "2019-08-09T07:00:00-03:00",
+    "EndEpochDate": 1565344800,
+    "MobileLink": "http://m.accuweather.com/es/ar/buenos-aires/7894/extended-weather-forecast/7894?unit=c&lang=es-ar",
+    "Link": "http://www.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?unit=c&lang=es-ar"
+  },
+  "DailyForecasts": [
+    {
+      "Date": "2019-08-08T07:00:00-03:00",
+      "EpochDate": 1565258400,
+      "Temperature": {
+        "Minimum": {
+          "Value": 7.2,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 13.9,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 6,
+        "IconPhrase": "Mayormente nublado",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 12,
+        "IconPhrase": "Chaparrones",
+        "HasPrecipitation": true,
+        "PrecipitationType": "Rain",
+        "PrecipitationIntensity": "Light"
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=1&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=1&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2019-08-09T07:00:00-03:00",
+      "EpochDate": 1565344800,
+      "Temperature": {
+        "Minimum": {
+          "Value": 5.4,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 12,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 36,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=2&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=2&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2019-08-10T07:00:00-03:00",
+      "EpochDate": 1565431200,
+      "Temperature": {
+        "Minimum": {
+          "Value": 8.6,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 15.3,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 1,
+        "IconPhrase": "Soleado",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Parcialmente nublado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=3&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=3&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2019-08-11T07:00:00-03:00",
+      "EpochDate": 1565517600,
+      "Temperature": {
+        "Minimum": {
+          "Value": 9.1,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 16.4,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Parcialmente nublado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=4&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=4&unit=c&lang=es-ar"
+    },
+    {
+      "Date": "2019-08-12T07:00:00-03:00",
+      "EpochDate": 1565604000,
+      "Temperature": {
+        "Minimum": {
+          "Value": 5.1,
+          "Unit": "C",
+          "UnitType": 17
+        },
+        "Maximum": {
+          "Value": 15.7,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "Day": {
+        "Icon": 4,
+        "IconPhrase": "Nubes intermitentes",
+        "HasPrecipitation": false
+      },
+      "Night": {
+        "Icon": 35,
+        "IconPhrase": "Parcialmente nublado",
+        "HasPrecipitation": false
+      },
+      "Sources": [
+        "AccuWeather"
+      ],
+      "MobileLink": "http://m.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=5&unit=c&lang=es-ar",
+      "Link": "http://www.accuweather.com/es/ar/buenos-aires/7894/daily-weather-forecast/7894?day=5&unit=c&lang=es-ar"
+    }
+  ]
+}

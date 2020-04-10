@@ -1,0 +1,144 @@
+{{#partial "login"}}
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Nuevo Evento Planificado</title>
+
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="../public/add.css">
+</head>
+
+<body>
+
+	<div class="container">
+		<div class="col-sm-10 text-center">
+			<h2>Nuevo Evento Planificado</h2>
+		</div>
+		<div class="col-sm-10" id="maincoint">
+			<div class="modal-content" id="add-main">
+				<form method="POST" action="/gestionEventos/altaEvento" class="needs-validation" id="add-prenda" novalidate>
+					<b><span id="tag">  Fecha y Hora de Inicio</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<input type="text" class="form-control" name="fechaHoraEvento" id="fechaHoraEvento" value="{{fechaHoraEvento}}" required>
+						</div>
+					</div>
+					</br>
+					<b><span id="tag">  Ubicacion</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="ubicacion" name="ubicacion" required>
+							{{#each ubicaciones}}
+								<option value="{{ciudad}}">{{ciudad}}</option>
+							{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Caracter Indumentaria</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="caracter" name="caracter" required>
+							{{#each caracteres}}
+								<option value="{{caracter}}">{{caracter}}</option>
+							{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Actividad</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<input type="text" class="form-control" name="actividad" id="actividad" value="{{actividad}}" required>
+						</div>
+					</div>
+		            </br>
+					<b><span id="tag">  Recordatorio</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<input type="text" class="form-control" name="cantidadTiempo" id="cantidadTiempo" value="{{cantidadTiempo}}" required>
+						</div>
+					</div>
+					</br>
+                    <div class="col-sm-10">
+						<select class="form-control custom-select" id="unidadTiempo" name="unidadTiempo" required>
+							{{#each unidadesPeriodo}}
+								<option value="{{unidadTiempo}}">{{unidadTiempo}}</option>
+							{{/each}}
+						</select>
+					</div>
+                    </br>
+					<b><span id="tag">  Repetitivo</span></b>
+					</br>
+					<div class="col-sm-10">
+						<select class="form-control custom-select" id="repetitivo" name="repetitivo" required>
+							{{#each auxiliares}}
+								<option value="{{estaOk}}">{{estaOk}}</option>
+							{{/each}}
+						</select>
+					</div>
+					</br>
+					<b><span id="tag">  Periodicidad</span></b>
+					</br>
+					<div class="col-sm-10">
+						<div class="input-group">
+							<input type="text" class="form-control" name="cantidadPeriodo" id="cantidadPeriodo" value="{{cantidadPeriodo}}" required>
+						</div>
+					</div>
+					</br>
+                    <div class="col-sm-10">
+						<select class="form-control custom-select" id="unidadPeriodo" name="unidadPeriodo" required>
+							{{#each unidadesPeriodo}}
+								<option value="{{unidadTiempo}}">{{unidadTiempo}}</option>
+							{{/each}}
+						</select>
+					</div>
+                    </br>
+                    <b><span id="tag">  Fecha y Hora Final</span></b>
+					</br>
+					<div class="col-sm-10">
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="fechaHoraFin" id="fechaHoraFin" value="{{fechaHoraFin}}"  >
+						</div>
+					</div>
+					</br>
+					<div class="col-sm-8 text-center">
+						<div class="row">
+						<div class="col">
+							<a href="/gestionEventos"><button type="button" class="btn btn-primary">Cancelar</button></a>
+						</div>
+						<div="col">
+							<a><button type="submit" class="btn btn-primary">Confirmar</button></a>
+						</div>
+					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	{{#block "cargaEventoError"}}
+	{{/block}}
+	{{#block "cargaEventoOk"}}
+	{{/block}}
+
+</body>
+<html>
+{{/partial}}
+{{>layout.hbs}}

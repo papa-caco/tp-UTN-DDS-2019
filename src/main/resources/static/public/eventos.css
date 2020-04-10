@@ -1,0 +1,89 @@
+body{
+	background: url(wallpaper.jpg) no-repeat center center fixed;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	justify-content: center;
+	align-items: center;
+	font-family: consolas;
+}
+
+a#a-menu{
+	color: white;
+}
+
+a#a-cs{
+	color: white;
+}
+.container{
+		margin-left:20px;
+}
+
+
+.container#carton{
+	width: 1000px;
+	position:relative;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding-top:20px;
+	
+}
+
+.container#carton .face{
+	width: 500px;
+	height: 200px;
+	align-items: center;
+	transition: 0.5;
+}
+
+.container#carton .face .faceuniq{
+	position: relative;
+	background: #fff;
+	display: flex;
+	padding: 20px;
+	box-sizing: border-box;
+	box-shadow: 0 5px 12px rgba(0,0,0,0.8);
+	border: solid #000 0px;
+	border-radius: 20px;
+	z-index: 1;
+}
+
+.container#carton .face .faceuniq .content{
+	margin: 0;
+	padding: 0;
+}
+
+.container#carton .face .faceuniq .content .row{
+	display: flex;
+	justify-content: flex-end;
+	text-align: center;
+	color: black;
+}
+
+.container#carton .face .faceuniq .content .row .col .estado{
+	color: green;
+	text-align: right;
+}
+
+.container#carton .face .faceuniq .content .row .col .dropdown-divider{
+	display: flex;
+	justify-content: center;
+}
+
+.container#botoncito{
+	margin-left:-15px;
+	opacity:.95;
+}
+
+.modal-content{
+	margin-top: 15px;
+	margin-left:0px;
+	background-color: #FDFAF5;
+	opacity: .75;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+
+}

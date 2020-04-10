@@ -1,0 +1,7 @@
+{{#partial "aceptarSugerenciaEventoError"}}
+	<p class="text-center" style="font-size: 1rem;color: red;">Error al seleccionar <u>Sugerencia#:</u><b>{{idSugerencia}}</b> para el <u>Evento#:</u> <b>{{idEvento}}</b></p>
+		<div class="container text-center" id="botoncito">
+			<a href="/sugerencias/mostrarAccionesSugerencia/{{idSugerencia}}"><button type="button" class="btn btn-primary btn-sm">Continuar</button></a>
+		</div>
+{{/partial}}
+{{>mostrarAccionesSugerencia.html}}

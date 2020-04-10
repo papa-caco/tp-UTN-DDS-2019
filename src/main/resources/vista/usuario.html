@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Bienvenido a QueMePongo??</title>
+	
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="public/usuario.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-toggler" id="a-menu"><span class="navbar-toggler-icon"></span> Home</a>
+		<div class="dropdown">
+			<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" id="a-cs">Cerrar sesion</a>
+			<div class="dropdown-menu text-center">
+				<a><img src="public/avatar.png" height="80" width="80"></a></br>
+				{{#each usuarios}}
+				<a>{{login}}</a>
+				{{/each}}
+				<div class="dropdown-divider"></div>
+				<a href="/salir" class="dropdown-item">Salir</a>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="modal-content">
+			{{#each usuarios}}
+			<h1>Bienvenido <strong>{{userName}}</strong></h1>
+			{{/each}}
+			</br>
+			</br>
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/placard.png" width="100px" height="100px id="placard"">
+						</div>
+					</div>
+					</br>
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/placards"><button type="button" class="btn btn-dark">Consultar Placards</button></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/prenda.png" width="100px" height="100px id="placard"">
+						</div>
+					</div>
+					</br>
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/placards"><button type="button" class="btn btn-dark">Consultar Prendas</button></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/percha.png" width="100px" height="100px id="placard"">
+						</div>
+					</div>
+					</br>
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/placards"><button type="button" class="btn btn-dark">Cargar Prendas</button></a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/calendar.png" width="100px" height="100px id="placard"">
+						</div>
+					</div>
+					</br>
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/placards"><button type="button" class="btn btn-dark">Consultar Eventos</button></a>
+						</div>
+					</div>
+				</div>					
+			</div>
+			
+			</br>
+			</br>
+			</br>
+			<div class="container text-center" id="botoncito">
+				<a href="/"><button type="button" class="btn btn-primary">Volver a la pagina principal</button></a>
+			</div>
+
+
+		</div>
+	</div>
+
+	{{#block "usuarioInicio"}}
+	{{/block}}
+
+
+	
+	<footer class="footer">
+	<p class="text-center">&copy; 2019 - Sistema QueMePongo - D.D.S. K3151  - Grupo n° 7</p>
+	</footer>
+</body>
+
+</html>
