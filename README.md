@@ -1,8 +1,2 @@
-# Grupo 7
-Gabriel Berardini
+# Repo para Seguridad en Apps Web
 
-Patricio Diaz Medin
-
-Carlos Comesaña
-
-Se está utilizando el Branch develop para las entregas.
