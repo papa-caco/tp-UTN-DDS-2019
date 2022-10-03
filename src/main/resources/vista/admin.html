@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Nueva Prenda</title>
+	
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="css/add.css">
+</head>
+
+<body>
+
+				<script>
+				// Example starter JavaScript for disabling form submissions if there are invalid fields
+				(function() {
+				  'use strict';
+				  window.addEventListener('load', function() {
+					// Fetch all the forms we want to apply custom Bootstrap validation styles to
+					var forms = document.getElementsByClassName('needs-validation');
+					// Loop over them and prevent submission
+					var cate=$("#opCat");
+					var tela=$("#opTela");
+					var validation = Array.prototype.filter.call(forms, function(form) {
+					  form.addEventListener('submit', function(event) {
+						if ((form.checkValidity() === false) || (cate.val() === "") || (tela.val()=== "")) {
+						  event.preventDefault();
+						  event.stopPropagation();
+						}else{
+							setTimeout(function() {window.location = "add2.html" });
+						}
+						form.classList.add('was-validated');
+					  }, false);
+					});
+				  }, false);
+				})();
+				
+				
+				</script>
+
+	<div class="container">
+		<div class="col-sm-10 text-center">
+			<h1>Bienvenido a ADMIN</h1>
+		</div>
+        
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Volver a HOME</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Buscar usuario" aria-label="Buscar usuario">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+		<div class="col-sm-10">
+			<div class="modal-content" id="add-main">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Contraseña</th>
+                          <th scope="col">Pregunta de seguridad</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Mark</td>
+                          <td>mark19@mail.com</td>
+                          <td>contra123</td>
+                          <td>inst sant antonio</td>
+                        </tr>
+                        <tr>
+                            <td>AntonioSa</td>
+                            <td>antonio.sa@mail.com</td>
+                            <td>password</td>
+                            <td>A la grande le puse cuca</td>
+                        </tr>
+                        <tr>
+                            <td>PichiPachu</td>
+                            <td>pichupachu@mail.com</td>
+                            <td>adminadmin</td>
+                            <td>Odio los lunes</td>
+                        </tr>
+                                    
+                      </tbody>
+                </table>
+                
+			</div>
+		</div>
+	</div>
+</body>
+<html>
