@@ -1,6 +1,7 @@
 package dominio.webapp.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import spark.ModelAndView;
@@ -42,7 +43,7 @@ public class LoginController {
 			res.redirect("/usuario");
 			return new ModelAndView(model, "/usuarioInicio.hbs");
 		}
-		return new ModelAndView(null, "home/errorSesion.hbs");
+		return new ModelAndView(currentUser, "home/errorSesion.hbs");
 	}
 	
 	public static ModelAndView salir(Request req, Response res) {

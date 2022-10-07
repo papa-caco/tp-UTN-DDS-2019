@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.uqbarproject.jpa.java8.extras.WithGlobalEntityManager;
 import javax.persistence.PersistenceException;
+import javax.persistence.Query;
 
 import dominio.usuario.*;
 
@@ -26,15 +27,26 @@ public class RepoUsuarios implements WithGlobalEntityManager {
 	public List<Usuario> getUsuarios() {
 			return entityManager().createQuery("from Usuario").getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Usuario> getUsuariosConCondicion(String userBuscado) {
+		
+		Query query = entityManager()
+				.createQuery("from Usuario where login LIKE "
+					+ "'"+userBuscado+"'", Usuario.class);
+		List<Usuario> users = query.getResultList();
+		return users;
+	}
 
 	public void agregarUsuario(Usuario usuario) {
 		String loginUsuario = usuario.getLogin();
-		Usuario usuarioAux = this.buscarPorLogin(loginUsuario);
+	/*	Usuario usuarioAux = this.buscarPorLogin(loginUsuario);
 		if (usuarioAux != null) {
 			throw new RuntimeException("Usuario ya existente");
 		} else {
 			entityManager().persist(usuario);
 		}
+		*/
 	}
 	
 	public void actualizarUsuario(Usuario user) {

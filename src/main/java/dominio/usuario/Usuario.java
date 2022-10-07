@@ -58,6 +58,10 @@ public class Usuario {
     @ManyToOne(cascade = CascadeType.ALL)
     private Membresia membresia;
 	
+	@NonNull
+	@Column
+	private Integer esAdmin;
+	
 	@ManyToMany(cascade = CascadeType.REMOVE, fetch=FetchType.EAGER)
     private List<Placard> placards = new ArrayList<>();
 	
@@ -78,6 +82,7 @@ public class Usuario {
        	this.eMail = "user@dds-utn.com.ar";
        	this.login = login;
        	this.password = "1234";
+       	this.esAdmin = 0;
     }
     
     public Usuario (String unNombre,String login , Membresia membre, String correo, List<Placard> misPlacards, CriterioSeleccionAtuendos unCriterio) {
@@ -88,6 +93,7 @@ public class Usuario {
        	this.eMail = correo;
        	this.login = login;
        	this.password = "1234";
+       	this.esAdmin = 0;
     }
     
     public Usuario (String unNombre, String login, Membresia membre, List<Placard> misPlacards, CriterioSeleccionAtuendos unCriterio, int valorFormal, int valorCasual) {
@@ -100,6 +106,7 @@ public class Usuario {
        	this.puntosCasual = valorCasual;
        	this.login = login;
        	this.password = "1234";
+       	this.esAdmin = 0;
     }
     
     public Usuario (String unNombre,String login, Membresia membre, String correo, String clave, List<Placard> misPlacards, CriterioSeleccionAtuendos unCriterio, int valorFormal, int valorCasual) {
@@ -112,6 +119,7 @@ public class Usuario {
        	this.puntosCasual = valorCasual;
        	this.login = login;
        	this.password = clave;
+       	this.esAdmin = 0;
     }
     public Usuario (String unNombre, Membresia membre, String correo, String login, List<Placard> misPlacards, CriterioSeleccionAtuendos unCriterio, int valorFormal, int valorCasual) {
         this.userName = unNombre;
@@ -123,6 +131,7 @@ public class Usuario {
        	this.puntosCasual = valorCasual;
        	this.login = login;
        	this.password = "1234";
+       	this.esAdmin = 0;
     }
     
     public Usuario () {
@@ -137,6 +146,7 @@ public class Usuario {
        	this.criterioVestimenta = criterio;
        	this.puntosFormal = valorFormal;
        	this.puntosCasual = valorCasual;
+       	this.esAdmin = 0;
     }
     
     public void cargarEventoPlanificado(EventoPlanificado event) {
