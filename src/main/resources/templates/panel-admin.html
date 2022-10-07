@@ -58,16 +58,18 @@
         
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Volver a HOME</a>
+              <a class="navbar-brand" href="/usuario">Volver a HOME</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+               <form  method="GET" class="d-flex" role="search" action="/obtener-data-users">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Buscar usuario" aria-label="Buscar usuario">
+               
+                  <input class="form-control me-2" name="nombreUser" type="search" placeholder="Buscar usuario" aria-label="Buscar usuario">
                   <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
+                
               </div>
+              </form>
             </div>
           </nav>
 
@@ -84,25 +86,22 @@
                         </tr>
                       </thead>
                       <tbody>
+                      	{{#each users}}
                         <tr>
-                          <td>Mark</td>
-                          <td>mark19@mail.com</td>
-                          <td>contra123</td>
-                          <td>inst sant antonio</td>
+                          <td>{{userName}}</td>
+                          <td>{{eMail}}</td>
+                          <td>
+                          	<div type="password">
+                          		{{password}}
+                          	</div>
+                          </td>
+                          <td>
+                          	<div type="password">
+                          		{{pregSeguridad}}
+                          	</div>
+                          </td>
                         </tr>
-                        <tr>
-                            <td>AntonioSa</td>
-                            <td>antonio.sa@mail.com</td>
-                            <td>password</td>
-                            <td>A la grande le puse cuca</td>
-                        </tr>
-                        <tr>
-                            <td>PichiPachu</td>
-                            <td>pichupachu@mail.com</td>
-                            <td>adminadmin</td>
-                            <td>Odio los lunes</td>
-                        </tr>
-                                    
+                        {{/each}}
                       </tbody>
                 </table>
                 

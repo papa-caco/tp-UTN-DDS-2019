@@ -62,6 +62,10 @@ public class Usuario {
 	@Column
 	private Integer esAdmin;
 	
+	@NonNull
+	@Column
+	private String pregSeguridad;
+	
 	@ManyToMany(cascade = CascadeType.REMOVE, fetch=FetchType.EAGER)
     private List<Placard> placards = new ArrayList<>();
 	

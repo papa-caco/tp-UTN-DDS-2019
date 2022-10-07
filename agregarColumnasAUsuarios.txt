@@ -1,0 +1,3 @@
+ALTER TABLE `TU_SCHEMA`.`usuarios` 
+ADD COLUMN `esAdmin` TINYINT NULL DEFAULT 0 AFTER `IdMembresia`,
+ADD COLUMN `pregSeguridad` VARCHAR(45) NULL AFTER `esAdmin`;
