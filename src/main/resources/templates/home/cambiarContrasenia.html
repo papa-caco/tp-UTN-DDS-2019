@@ -30,23 +30,15 @@
 				<div class="col-12 user-img">
 					<img src="public/avatar.png"  width="180px" height="180px" />
 				</div>
-				<form method="POST" action="/login">
+				<form method="POST" action="/cambiarPassword">
 					<div class="form-group" id="user-group">
-						<input type="text" name = "usuarioID" id="inputUsuario" class="form-control" placeholder="Nombre de Usuario" required autofocus>
+						<input type="password" name = "password1" id="inputUsuario" class="form-control" placeholder="Nueva password" required autofocus>
 					</div>
 					<div class="form-group" id="contrasena-group">
-						<input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
-					</div>
-					<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input" id="exampleCheck1">
-						<label class="form-check-label" for="Recuerdame">Recuerdame</label>
+						<input type="password" name="password2" id="inputPassword" class="form-control" placeholder="Repetir password" required>
 					</div>
 					<button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
 					<br>
-				</form>
-				
-				<form method="GET" action="/preguntaSeguridad">
-					<button class="btn btn-lg btn-secondary btn-block" type="submit">Olvidé mi contraseña</button>
 				</form>
 			</div>
 		</div>

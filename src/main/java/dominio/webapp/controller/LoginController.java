@@ -20,6 +20,46 @@ public class LoginController {
 		return new ModelAndView(null, "home/login.html");
 	}
 	
+	public static ModelAndView mostrarPreguntaSeguridad(Request req, Response res) {
+		Map<String, Object> model = new HashMap<>();
+		return new ModelAndView(model, "home/preguntaDeSeguridad.html");
+	}
+	
+	public static ModelAndView confirmarPreguntaSeguridad(Request req, Response res) {
+		String user = req.queryParams("usuarioID");
+		String pregSeguridad = req.queryParams("pregSeguridad");
+		
+		Usuario currentUser = RepoUsuarios.getInstance().buscarPorLogin(user);
+		Map<String, Object> model = new HashMap<>();
+		if(currentUser!= null && currentUser.getPregSeguridad().equals(pregSeguridad)) {
+			//PASAMOS A CAMBIAR SU CONTRASEÑA
+			res.cookie("user", user);
+			return new ModelAndView(model, "home/cambiarContrasenia.html");
+		}
+		//ERROR, NO ES LA MISMA PREGUNTA DE SEGURIDAD
+		return new ModelAndView(model, "home/errorPreguntaSeguridad.hbs");
+	}
+	
+	public static ModelAndView cambiarPassword(Request req, Response res) {
+		String user = req.cookie("user");
+		String password1 = req.queryParams("password1");
+		String password2 = req.queryParams("password2");
+		Map<String, Object> model = new HashMap<>();
+		Usuario currentUser = RepoUsuarios.getInstance().buscarPorLogin(user);
+		if(currentUser!= null && password1.equals(password2)) {
+			currentUser.setPassword(password2);
+			RepoUsuarios.getInstance().actualizarUsuario(currentUser);
+			
+			return new ModelAndView(model, "home/exitoCambiarContrasenia.hbs");
+		}
+	
+		//ERROR, NO ES LA MISMA PREGUNTA DE SEGURIDAD
+		return new ModelAndView(model, "home/errorCambiarContrasenia.hbs");
+	}
+	
+	
+	
+	
 	public static ModelAndView login(Request req, Response res) {
 		String login = req.queryParams("usuarioID");
 		String pass = req.queryParams("password");
