@@ -80,8 +80,11 @@ public class LoginController {
 			req.session().attribute("currentPageCalificados", 0);
 			req.session().attribute("currentPageSugerencias", 0);
 			Map<String, Object> model = new HashMap<>();
-			res.redirect("/usuario");
-			return new ModelAndView(model, "/usuarioInicio.hbs");
+		//	res.redirect("/usuario");
+			if(currentUser.getEsAdmin().equals(0)) {
+				return new ModelAndView(model, "/usuario.html");
+			} 
+			return new ModelAndView(model, "/usuarioAdmin.html");
 		}
 		return new ModelAndView(currentUser, "home/errorSesion.hbs");
 	}
