@@ -1,8 +1,12 @@
 package dominio.webapp.controller;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.bind.DatatypeConverter;
 
 import spark.ModelAndView;
 import spark.Request;
@@ -40,16 +44,23 @@ public class LoginController {
 		return new ModelAndView(model, "home/errorPreguntaSeguridad.hbs");
 	}
 	
-	public static ModelAndView cambiarPassword(Request req, Response res) {
+	public static ModelAndView cambiarPassword(Request req, Response res) throws NoSuchAlgorithmException {
 		String user = req.cookie("user");
 		String password1 = req.queryParams("password1");
 		String password2 = req.queryParams("password2");
 		Map<String, Object> model = new HashMap<>();
+		
+		
+		
 		Usuario currentUser = RepoUsuarios.getInstance().buscarPorLogin(user);
 		if(currentUser!= null && password1.equals(password2)) {
-			currentUser.setPassword(password2);
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(password1.getBytes());
+			byte[] digest = md.digest();
+		    String myHash = DatatypeConverter
+		    	      .printHexBinary(digest).toUpperCase();
+			currentUser.setPassword(myHash);
 			RepoUsuarios.getInstance().actualizarUsuario(currentUser);
-			
 			return new ModelAndView(model, "home/exitoCambiarContrasenia.hbs");
 		}
 	
@@ -60,7 +71,7 @@ public class LoginController {
 	
 	
 	
-	public static ModelAndView login(Request req, Response res) {
+	public static ModelAndView login(Request req, Response res) throws NoSuchAlgorithmException {
 		String login = req.queryParams("usuarioID");
 		String pass = req.queryParams("password");
 		Usuario currentUser = RepoUsuarios.getInstance().buscarPorLogin(login);

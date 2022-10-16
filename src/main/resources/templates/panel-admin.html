@@ -83,6 +83,7 @@
                           <th scope="col">Email</th>
                           <th scope="col">Contraseña</th>
                           <th scope="col">Pregunta de seguridad</th>
+						  <th scope="col">Es admin</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -96,6 +97,9 @@
                           <td>
                           	{{pregSeguridad}}
                           </td>
+						  <td>
+							{{esAdmin}}
+						  </td>
                         </tr>
                         {{/each}}
                       </tbody>
