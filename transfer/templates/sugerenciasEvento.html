@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>QueMePongo?? - Sugerencias para Evento</title>
+
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="/public/usuario.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-toggler" id="a-menu"><span class="navbar-toggler-icon"></span> Home</a>
+	</nav>
+       	<div class="modal-content">
+			<h4><b>{{dateTimeActual}} {{usuarioActual}}</b> - Evento #: <b>{{idEvento}}</b></h4>
+			<h4><u>Datos Pronóstico</u>-<u>Temp. max.:</u><b>{{tempMax}}</b><u>(°C)-Temp. min.:</u><b>{{tempMin}}</b><u>(°C)-Precipitaciones:</u><b>{{precipit}}</b></h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Fecha/Hora</th>
+						<th>Ubicacion</th>
+                        <th>Caracter</th>
+                        <th>Estado</th>
+						<th>Actividad</th>
+						<th>Sugerencia #</th>
+						<th></th>
+					</tr>
+				</thead>
+                <tbody>
+				    {{#each reqEventos}}
+					<tr>
+						<td>{{fechaHoraEvento}}</td>
+                        <td>{{ubicacion}}</td>
+                        <td>{{caracter}}</td>
+                        <td>{{estado}}</td>
+						<td>{{actividad}}</td>
+						<td>{{idSugerenciaElegida}}</td>
+						<td><a href="/sugerencias/mostrarAccionesSugerencia/{{idSugerenciaElegida}}?idEvt={{idEvento}}">Detalles</a></td>
+						<td>
+                        <form method="POST" action="/gestionEventos/deshacerSeleccionSugerencia/{{idEvento}}" class="needs-validation" id="add-prenda" novalidate>
+                           <a><button type="submit" class="btn btn-dark btn-sm">Borrar Selección</button></a>
+						</form>
+						</td>
+					</tr>
+                    {{/each}}
+				</tbody>
+			</table>
+		</div>
+	{{#block "borrarSugerenciaEventoError"}}
+	{{/block}}
+	{{#block "borrarSugerenciaEventoOk"}}
+	{{/block}}
+	<div class="container">
+		<div class="modal-content">
+			<div class="row">
+            	<div class="col-lg-12">
+			    	<h5><u>Sugerencias Generadas</u>-<u>Mostrando:</u> <b>{{cantPagina}}</b>-<u>de:</u> <b>{{cantSuge}}</b> - <u>Página</u> <b>{{paginaActual}}</b> <u>de</u> <b>{{totalPaginas}}</b></h5>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li class="page-item"><a class="page-link" href="/gestionEventos/consultarSugerenciasEvento/{{idEvento}}?cantidad=10&page=prev"><b><-Ant</b></a></li>
+						<div class="col-1">
+						<!--select class="form-control custom-select" id="cantElem" name="cantElem" required>
+							<option value="5">5</option>
+							<option value="1">10</option>
+							<option value="2">20</option>        								
+							<option value="3">50</option>
+							<option value="4">100</option>        								
+							<option value="">Todo</option>
+						</select-->
+						</div>
+						<li class="page-item"><a class="page-link" href="/gestionEventos/consultarSugerenciasEvento/{{idEvento}}?cantidad=10&page=next"><b>Sig-></b></a></li>
+					</ul>
+				</nav>
+				<div class="container text-center" id="botoncito">
+					<a href="/gestionEventos/getProximos?cantidad=10&page=first"><button type="button" class="btn btn-dark">Volver a Eventos Próximos</button></a>
+				</div>
+				<table class="table-sm">
+					<thead>
+						<tr>
+							<th>Sugerencia#</th>
+							<th>Prendas</th>
+							<th>Estado</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each reqSugerenciasEvento}}
+						<tr>
+							<td>{{idSugerencia}}</td>
+							<td>{{tipos}}</td>
+							<td>{{estado}}</td>
+							<td><a href="/sugerencias/mostrarAccionesSugerencia/{{idSugerencia}}?idEvt={{idEvento}}">Acciones</a></td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	{{#block "usuarioInicio"}}
+	{{/block}}
+
+
+
+	<footer class="footer">
+	<p class="text-center">&copy; 2019 - Sistema QueMePongo - D.D.S. K3151  - Grupo n° 7</p>
+	</footer>
+</body>
+
+</html>

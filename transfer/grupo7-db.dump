@@ -1,0 +1,582 @@
+-- MySQL dump 10.13  Distrib 8.0.18, for Win64 (x86_64)
+--
+-- Host: localhost    Database: grupo7
+-- ------------------------------------------------------
+-- Server version	8.0.18
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `atuendos`
+--
+
+DROP TABLE IF EXISTS `atuendos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `atuendos` (
+  `IdAtuendo` int(11) NOT NULL,
+  `IdPlacard` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdAtuendo`),
+  KEY `FKdt6myhk20syxnjihvkfpynjgu` (`IdPlacard`),
+  CONSTRAINT `FKdt6myhk20syxnjihvkfpynjgu` FOREIGN KEY (`IdPlacard`) REFERENCES `placards` (`IdPlacard`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `atuendos`
+--
+
+LOCK TABLES `atuendos` WRITE;
+/*!40000 ALTER TABLE `atuendos` DISABLE KEYS */;
+INSERT INTO `atuendos` VALUES (89,80),(90,80),(91,80),(92,80),(93,80),(94,80),(95,80),(96,80),(97,80),(98,80),(99,80),(100,80),(101,80),(102,80),(103,80),(104,80),(105,80),(106,80),(107,80),(108,80),(229,81),(230,81),(231,81),(232,81),(233,81),(234,81),(235,81),(236,81),(237,81),(238,81),(239,81),(240,81),(241,81),(242,81),(243,81),(244,81),(245,81),(246,81),(247,81),(248,81),(249,81),(250,81),(251,81),(252,81),(253,81),(254,81),(255,81),(256,81),(257,81),(258,81),(259,81),(260,81),(261,81),(262,81),(263,81),(264,81),(265,81),(266,81),(267,81),(268,81),(125,82),(126,82),(127,82),(128,82),(129,82),(130,82),(131,82),(132,82),(133,82),(134,82),(135,82),(136,82);
+/*!40000 ALTER TABLE `atuendos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `atuendos_prendas`
+--
+
+DROP TABLE IF EXISTS `atuendos_prendas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `atuendos_prendas` (
+  `Atuendo_IdAtuendo` int(11) NOT NULL,
+  `prendasAtuendo_IdPrenda` int(11) NOT NULL,
+  KEY `FKsc8lc7py359vgy81gxy5c0nn8` (`prendasAtuendo_IdPrenda`),
+  KEY `FKiqr3ryukhuo71hg4s8vl5r6px` (`Atuendo_IdAtuendo`),
+  CONSTRAINT `FKiqr3ryukhuo71hg4s8vl5r6px` FOREIGN KEY (`Atuendo_IdAtuendo`) REFERENCES `atuendos` (`IdAtuendo`),
+  CONSTRAINT `FKsc8lc7py359vgy81gxy5c0nn8` FOREIGN KEY (`prendasAtuendo_IdPrenda`) REFERENCES `prendas` (`IdPrenda`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `atuendos_prendas`
+--
+
+LOCK TABLES `atuendos_prendas` WRITE;
+/*!40000 ALTER TABLE `atuendos_prendas` DISABLE KEYS */;
+INSERT INTO `atuendos_prendas` VALUES (89,49),(89,54),(89,58),(89,50),(89,53),(89,51),(90,49),(90,54),(90,58),(90,50),(90,53),(90,55),(91,49),(91,54),(91,58),(91,50),(91,53),(91,51),(91,52),(92,49),(92,54),(92,58),(92,50),(92,53),(92,51),(92,55),(93,49),(93,54),(93,58),(93,50),(93,53),(93,55),(93,52),(94,49),(94,54),(94,58),(94,50),(94,57),(94,51),(95,49),(95,54),(95,58),(95,50),(95,57),(95,55),(96,49),(96,54),(96,58),(96,50),(96,57),(96,51),(96,52),(97,49),(97,54),(97,58),(97,50),(97,57),(97,51),(97,55),(98,49),(98,54),(98,58),(98,50),(98,57),(98,55),(98,52),(99,56),(99,54),(99,58),(99,50),(99,53),(99,51),(100,56),(100,54),(100,58),(100,50),(100,53),(100,55),(101,56),(101,54),(101,58),(101,50),(101,53),(101,51),(101,52),(102,56),(102,54),(102,58),(102,50),(102,53),(102,51),(102,55),(103,56),(103,54),(103,58),(103,50),(103,53),(103,55),(103,52),(104,56),(104,54),(104,58),(104,50),(104,57),(104,51),(105,56),(105,54),(105,58),(105,50),(105,57),(105,55),(106,56),(106,54),(106,58),(106,50),(106,57),(106,51),(106,52),(107,56),(107,54),(107,58),(107,50),(107,57),(107,51),(107,55),(108,56),(108,54),(108,58),(108,50),(108,57),(108,55),(108,52),(125,69),(125,76),(125,79),(125,71),(125,77),(125,74),(126,69),(126,76),(126,79),(126,71),(126,77),(126,73),(127,69),(127,76),(127,79),(127,71),(127,77),(127,72),(128,69),(128,76),(128,79),(128,71),(128,77),(128,74),(128,78),(129,69),(129,76),(129,79),(129,71),(129,77),(129,74),(129,73),(130,69),(130,76),(130,79),(130,71),(130,77),(130,74),(130,75),(131,69),(131,76),(131,79),(131,71),(131,77),(131,74),(131,72),(132,69),(132,76),(132,79),(132,71),(132,77),(132,73),(132,78),(133,69),(133,76),(133,79),(133,71),(133,77),(133,73),(133,75),(134,69),(134,76),(134,79),(134,71),(134,77),(134,72),(134,78),(135,69),(135,76),(135,79),(135,71),(135,77),(135,72),(135,75),(136,69),(136,76),(136,79),(136,71),(136,77),(136,74),(136,73),(136,75),(229,66),(229,65),(229,68),(229,60),(229,59),(229,63),(230,66),(230,65),(230,68),(230,60),(230,59),(230,62),(231,66),(231,65),(231,68),(231,60),(231,59),(231,228),(232,66),(232,65),(232,68),(232,60),(232,59),(232,63),(232,61),(233,66),(233,65),(233,68),(233,60),(233,59),(233,62),(233,61),(234,66),(234,65),(234,68),(234,60),(234,59),(234,228),(234,63),(235,66),(235,65),(235,68),(235,60),(235,59),(235,228),(235,62),(236,66),(236,65),(236,68),(236,60),(236,59),(236,228),(236,61),(237,66),(237,65),(237,68),(237,60),(237,59),(237,228),(237,63),(237,61),(238,66),(238,65),(238,68),(238,60),(238,59),(238,228),(238,62),(238,61),(239,66),(239,65),(239,68),(239,60),(239,64),(239,63),(240,66),(240,65),(240,68),(240,60),(240,64),(240,62),(241,66),(241,65),(241,68),(241,60),(241,64),(241,228),(242,66),(242,65),(242,68),(242,60),(242,64),(242,63),(242,61),(243,66),(243,65),(243,68),(243,60),(243,64),(243,62),(243,61),(244,66),(244,65),(244,68),(244,60),(244,64),(244,228),(244,63),(245,66),(245,65),(245,68),(245,60),(245,64),(245,228),(245,62),(246,66),(246,65),(246,68),(246,60),(246,64),(246,228),(246,61),(247,66),(247,65),(247,68),(247,60),(247,64),(247,228),(247,63),(247,61),(248,66),(248,65),(248,68),(248,60),(248,64),(248,228),(248,62),(248,61),(249,67),(249,65),(249,68),(249,60),(249,59),(249,63),(250,67),(250,65),(250,68),(250,60),(250,59),(250,62),(251,67),(251,65),(251,68),(251,60),(251,59),(251,228),(252,67),(252,65),(252,68),(252,60),(252,59),(252,63),(252,61),(253,67),(253,65),(253,68),(253,60),(253,59),(253,62),(253,61),(254,67),(254,65),(254,68),(254,60),(254,59),(254,228),(254,63),(255,67),(255,65),(255,68),(255,60),(255,59),(255,228),(255,62),(256,67),(256,65),(256,68),(256,60),(256,59),(256,228),(256,61),(257,67),(257,65),(257,68),(257,60),(257,59),(257,228),(257,63),(257,61),(258,67),(258,65),(258,68),(258,60),(258,59),(258,228),(258,62),(258,61),(259,67),(259,65),(259,68),(259,60),(259,64),(259,63),(260,67),(260,65),(260,68),(260,60),(260,64),(260,62),(261,67),(261,65),(261,68),(261,60),(261,64),(261,228),(262,67),(262,65),(262,68),(262,60),(262,64),(262,63),(262,61),(263,67),(263,65),(263,68),(263,60),(263,64),(263,62),(263,61),(264,67),(264,65),(264,68),(264,60),(264,64),(264,228),(264,63),(265,67),(265,65),(265,68),(265,60),(265,64),(265,228),(265,62),(266,67),(266,65),(266,68),(266,60),(266,64),(266,228),(266,61),(267,67),(267,65),(267,68),(267,60),(267,64),(267,228),(267,63),(267,61),(268,67),(268,65),(268,68),(268,60),(268,64),(268,228),(268,62),(268,61);
+/*!40000 ALTER TABLE `atuendos_prendas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `calificaciones`
+--
+
+DROP TABLE IF EXISTS `calificaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `calificaciones` (
+  `IdCalificacion` int(11) NOT NULL,
+  `Cabeza` int(11) DEFAULT NULL,
+  `Cuello` int(11) DEFAULT NULL,
+  `Global` int(11) DEFAULT NULL,
+  `Manos` int(11) DEFAULT NULL,
+  `IdUsuario` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdCalificacion`),
+  KEY `FKnpflkr7wskbl7il9cc52sbr3y` (`IdUsuario`),
+  CONSTRAINT `FKnpflkr7wskbl7il9cc52sbr3y` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `calificaciones`
+--
+
+LOCK TABLES `calificaciones` WRITE;
+/*!40000 ALTER TABLE `calificaciones` DISABLE KEYS */;
+INSERT INTO `calificaciones` VALUES (163,2,2,2,2,83),(227,1,2,1,2,86);
+/*!40000 ALTER TABLE `calificaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `capa`
+--
+
+DROP TABLE IF EXISTS `capa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `capa` (
+  `tipo_capa` varchar(31) NOT NULL,
+  `IdCapa` int(11) NOT NULL,
+  `Unidades` double DEFAULT NULL,
+  PRIMARY KEY (`IdCapa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `capa`
+--
+
+LOCK TABLES `capa` WRITE;
+/*!40000 ALTER TABLE `capa` DISABLE KEYS */;
+INSERT INTO `capa` VALUES ('Superior',1,20),('Superior',2,30),('Interior',3,10),('Interior',4,5),('Intermedia',5,12),('Intermedia',6,15),('Intermedia',7,18),('Intermedia',21,25),('Superior',26,25),('Intermedia',30,20);
+/*!40000 ALTER TABLE `capa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `colores`
+--
+
+DROP TABLE IF EXISTS `colores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `colores` (
+  `IdColor` int(11) NOT NULL,
+  `deColor` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`IdColor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `colores`
+--
+
+LOCK TABLES `colores` WRITE;
+/*!40000 ALTER TABLE `colores` DISABLE KEYS */;
+INSERT INTO `colores` VALUES (8,'amarillo'),(9,'azul'),(10,'blanco'),(11,'celeste'),(12,'gris'),(13,'marron'),(14,'naranja'),(15,'negro'),(16,'rojo'),(17,'verde'),(18,'violeta');
+/*!40000 ALTER TABLE `colores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `criteriosusuario`
+--
+
+DROP TABLE IF EXISTS `criteriosusuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `criteriosusuario` (
+  `Tipo_Criterio` varchar(31) NOT NULL,
+  `IdCriterio` int(11) NOT NULL,
+  PRIMARY KEY (`IdCriterio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `criteriosusuario`
+--
+
+LOCK TABLES `criteriosusuario` WRITE;
+/*!40000 ALTER TABLE `criteriosusuario` DISABLE KEYS */;
+INSERT INTO `criteriosusuario` VALUES ('CriterioAbrigar',84),('CriterioRefrescar',87);
+/*!40000 ALTER TABLE `criteriosusuario` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `eventos`
+--
+
+DROP TABLE IF EXISTS `eventos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `eventos` (
+  `Tipo_Evento` varchar(31) NOT NULL,
+  `IdEvento` int(11) NOT NULL,
+  `actividad` varchar(255) DEFAULT NULL,
+  `IdCaracterPrendas` int(11) DEFAULT NULL,
+  `IdStatusEvt` int(11) DEFAULT NULL,
+  `fechaHoraEvento` datetime(6) DEFAULT NULL,
+  `ubicacion` varchar(255) DEFAULT NULL,
+  `idPlanificado` int(11) DEFAULT NULL,
+  `cantidadPeriodo` int(11) DEFAULT NULL,
+  `fechaHoraFin` datetime(6) DEFAULT NULL,
+  `IdTimeScale` int(11) DEFAULT NULL,
+  `IdSugerencia` int(11) DEFAULT NULL,
+  `IdUsuario` int(11) DEFAULT NULL,
+  `IdRecordatorio` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdEvento`),
+  KEY `FK24kv3yunoy00p9bkx3oe9regi` (`IdSugerencia`),
+  KEY `FKj5vv4g0ydwxaptjktkb0696aq` (`IdUsuario`),
+  KEY `FK12hp4g8q0ihr8xpaqnrpyybnc` (`IdRecordatorio`),
+  CONSTRAINT `FK12hp4g8q0ihr8xpaqnrpyybnc` FOREIGN KEY (`IdRecordatorio`) REFERENCES `recordatorios` (`IdRecordatorio`),
+  CONSTRAINT `FK24kv3yunoy00p9bkx3oe9regi` FOREIGN KEY (`IdSugerencia`) REFERENCES `sugerencias` (`IdSugerencia`),
+  CONSTRAINT `FKj5vv4g0ydwxaptjktkb0696aq` FOREIGN KEY (`IdUsuario`) REFERENCES `usuarios` (`IdUsuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eventos`
+--
+
+LOCK TABLES `eventos` WRITE;
+/*!40000 ALTER TABLE `eventos` DISABLE KEYS */;
+INSERT INTO `eventos` VALUES ('EventoHistorico',162,'Ir a verdulería',0,2,'2022-09-10 12:30:00.000000','Buenos Aires',149,NULL,NULL,NULL,150,83,NULL),('EventoHistorico',184,'almuerzo',1,2,'2022-09-10 13:00:00.000000','Olivos',183,NULL,NULL,NULL,NULL,86,NULL),('EventoHistorico',185,'\' or 1=1',0,2,'2022-09-10 15:00:00.000000','Avellaneda',165,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',188,'Tomar el te',2,2,'2022-09-10 18:40:00.000000','Avellaneda',187,NULL,NULL,NULL,NULL,86,NULL),('EventoHistorico',191,'Ir a verdulería',1,2,'2022-09-10 19:05:00.000000','Buenos Aires',190,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',193,'Salir un rato',1,2,'2022-09-10 19:47:00.000000','Buenos Aires',192,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',195,'Salir un rato',0,2,'2022-09-10 20:08:00.000000','Avellaneda',194,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',197,'Salir al balcon',0,2,'2022-09-10 20:16:00.000000','Avellaneda',196,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',199,'Salir un rato',0,2,'2022-09-10 20:21:00.000000','Avellaneda',198,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',217,'Ir a verdulería',0,2,'2022-09-10 20:40:00.000000','Avellaneda',200,NULL,NULL,NULL,NULL,83,NULL),('EventoHistorico',219,'Salir un rato',1,2,'2022-09-10 20:45:00.000000','Moron',218,NULL,NULL,NULL,NULL,86,NULL),('EventoHistorico',225,'Salir un rato',0,2,'2022-09-10 20:47:00.000000','Avellaneda',220,NULL,NULL,NULL,221,86,NULL),('EventoHistorico',226,'Salir un rato',0,2,'2022-09-10 20:47:00.000000','Avellaneda',220,NULL,NULL,NULL,221,86,NULL);
+/*!40000 ALTER TABLE `eventos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `eventos_sugerencias`
+--
+
+DROP TABLE IF EXISTS `eventos_sugerencias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `eventos_sugerencias` (
+  `EventoPlanificado_IdEvento` int(11) NOT NULL,
+  `sugerencias_IdSugerencia` int(11) NOT NULL,
+  KEY `FK172j8i85yd30enktralx85yfk` (`sugerencias_IdSugerencia`),
+  KEY `FK3ndkkymdld8uobf9ysjcjgl44` (`EventoPlanificado_IdEvento`),
+  CONSTRAINT `FK172j8i85yd30enktralx85yfk` FOREIGN KEY (`sugerencias_IdSugerencia`) REFERENCES `sugerencias` (`IdSugerencia`),
+  CONSTRAINT `FK3ndkkymdld8uobf9ysjcjgl44` FOREIGN KEY (`EventoPlanificado_IdEvento`) REFERENCES `eventos` (`IdEvento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eventos_sugerencias`
+--
+
+LOCK TABLES `eventos_sugerencias` WRITE;
+/*!40000 ALTER TABLE `eventos_sugerencias` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eventos_sugerencias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hibernate_sequence`
+--
+
+DROP TABLE IF EXISTS `hibernate_sequence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hibernate_sequence`
+--
+
+LOCK TABLES `hibernate_sequence` WRITE;
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` VALUES (643),(643),(643),(643),(643),(643),(643),(643),(643),(643),(643),(643),(643),(643),(643);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `membresias`
+--
+
+DROP TABLE IF EXISTS `membresias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `membresias` (
+  `IdMembresia` int(11) NOT NULL,
+  `cantPrendasPlacard` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdMembresia`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `membresias`
+--
+
+LOCK TABLES `membresias` WRITE;
+/*!40000 ALTER TABLE `membresias` DISABLE KEYS */;
+INSERT INTO `membresias` VALUES (85,40),(88,100);
+/*!40000 ALTER TABLE `membresias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `placards`
+--
+
+DROP TABLE IF EXISTS `placards`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `placards` (
+  `IdPlacard` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`IdPlacard`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `placards`
+--
+
+LOCK TABLES `placards` WRITE;
+/*!40000 ALTER TABLE `placards` DISABLE KEYS */;
+INSERT INTO `placards` VALUES (80,'Placard Prendas Deportivas'),(81,'Placard Prendas Casuales'),(82,'Placard Prendas de Vestir');
+/*!40000 ALTER TABLE `placards` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `placards_prendas`
+--
+
+DROP TABLE IF EXISTS `placards_prendas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `placards_prendas` (
+  `Placard_IdPlacard` int(11) NOT NULL,
+  `prendas_IdPrenda` int(11) NOT NULL,
+  UNIQUE KEY `UK_9avxh4orke4espn6begha80af` (`prendas_IdPrenda`),
+  KEY `FKd62376wnieemtskmy44l74q8m` (`Placard_IdPlacard`),
+  CONSTRAINT `FKd62376wnieemtskmy44l74q8m` FOREIGN KEY (`Placard_IdPlacard`) REFERENCES `placards` (`IdPlacard`),
+  CONSTRAINT `FKt4e5j318mdof8f5e9tm6mqttu` FOREIGN KEY (`prendas_IdPrenda`) REFERENCES `prendas` (`IdPrenda`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `placards_prendas`
+--
+
+LOCK TABLES `placards_prendas` WRITE;
+/*!40000 ALTER TABLE `placards_prendas` DISABLE KEYS */;
+INSERT INTO `placards_prendas` VALUES (80,49),(80,50),(80,51),(80,52),(80,53),(80,54),(80,55),(80,56),(80,57),(80,58),(80,269),(80,270),(80,271),(80,272),(80,273),(80,274),(80,275),(80,276),(80,277),(80,278),(80,279),(80,280),(80,281),(80,282),(80,283),(80,284),(80,285),(80,286),(80,287),(80,288),(80,289),(80,290),(80,291),(80,292),(80,293),(80,294),(80,295),(80,296),(80,297),(80,298),(81,59),(81,60),(81,61),(81,62),(81,63),(81,64),(81,65),(81,66),(81,67),(81,68),(81,228),(82,69),(82,70),(82,71),(82,72),(82,73),(82,74),(82,75),(82,76),(82,77),(82,78),(82,79);
+/*!40000 ALTER TABLE `placards_prendas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `prendas`
+--
+
+DROP TABLE IF EXISTS `prendas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `prendas` (
+  `IdPrenda` int(11) NOT NULL,
+  `IdCateg` int(11) DEFAULT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `IdUso` int(11) DEFAULT NULL,
+  `IdColor` int(11) DEFAULT NULL,
+  `deColor` int(11) DEFAULT NULL,
+  `IdTela` int(11) DEFAULT NULL,
+  `IdTipo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdPrenda`),
+  KEY `FK12kl63ir3wta9yig3xje18kib` (`IdColor`),
+  KEY `FKrw1cjgtwxk4x2am222ho1bcxe` (`deColor`),
+  KEY `FKd5taq1nwpe6tv8tnj3gsv570a` (`IdTela`),
+  KEY `FKb5byu5ypn6bjulri5arutdt7y` (`IdTipo`),
+  CONSTRAINT `FK12kl63ir3wta9yig3xje18kib` FOREIGN KEY (`IdColor`) REFERENCES `colores` (`IdColor`),
+  CONSTRAINT `FKb5byu5ypn6bjulri5arutdt7y` FOREIGN KEY (`IdTipo`) REFERENCES `tipos` (`IdTipo`),
+  CONSTRAINT `FKd5taq1nwpe6tv8tnj3gsv570a` FOREIGN KEY (`IdTela`) REFERENCES `telas` (`IdTela`),
+  CONSTRAINT `FKrw1cjgtwxk4x2am222ho1bcxe` FOREIGN KEY (`deColor`) REFERENCES `colores` (`IdColor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `prendas`
+--
+
+LOCK TABLES `prendas` WRITE;
+/*!40000 ALTER TABLE `prendas` DISABLE KEYS */;
+INSERT INTO `prendas` VALUES (49,3,'bolso azul',0,9,15,47,20),(50,1,'calzoncillo blanco',0,10,16,42,23),(51,2,'camiseta blanca',0,10,16,42,25),(52,2,'campera verde',0,17,17,45,27),(53,1,'jogging gris',0,12,12,42,31),(54,0,'medias azules',0,9,9,42,32),(55,2,'musculosa amarilla',0,8,8,44,34),(56,3,'paraguas azul',0,9,9,48,37),(57,1,'short negro',0,15,15,44,38),(58,0,'zapatillas blancas',0,10,16,47,40),(59,1,'bermuda celeste',1,11,10,45,19),(60,1,'calzoncillo rojo',1,16,16,42,23),(61,2,'campera azul',1,9,9,45,27),(62,2,'chomba azul',1,9,16,42,28),(63,2,'chomba roja',1,16,16,42,28),(64,1,'jean azul',1,9,9,45,35),(65,0,'medias blancas',1,10,10,42,32),(66,3,'mochila negra',1,15,15,47,33),(67,3,'panuelo verde',1,17,8,48,36),(68,0,'zapatos azules',1,9,9,43,41),(69,3,'bolso marron',2,13,13,43,20),(70,5,'bufanda gris',2,12,13,46,22),(71,1,'calzoncillo azul',2,9,9,42,23),(72,2,'camisa_blanca',2,10,10,48,24),(73,2,'camisa celeste',2,11,11,42,24),(74,2,'camiseta algodon',2,10,16,42,25),(75,2,'campera blanca',2,10,10,45,27),(76,0,'medias negras',2,15,15,42,32),(77,1,'pantalon negro',2,15,15,45,35),(78,2,'sweater azul',2,9,9,46,39),(79,0,'zapatos negros',2,15,15,43,41),(228,2,'remera verde y amarilla',1,17,8,42,25),(269,2,'Chomba negra y roja',0,15,16,42,28),(270,2,'c:/Windows/system.ini',0,15,16,42,28),(271,2,'../../../../../../../../../../../../../../../../Windows/system.ini',0,15,16,42,28),(272,2,'c:\\Windows\\system.ini',0,15,16,42,28),(273,2,'..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\..\\Windows\\system.ini',0,15,16,42,28),(274,2,'/etc/passwd',0,15,16,42,28),(275,2,'../../../../../../../../../../../../../../../../etc/passwd',0,15,16,42,28),(276,2,'c:/',0,15,16,42,28),(277,2,'/',0,15,16,42,28),(278,2,'c:\\',0,15,16,42,28),(279,2,'../../../../../../../../../../../../../../../../',0,15,16,42,28),(280,2,'WEB-INF/web.xml',0,15,16,42,28),(281,2,'WEB-INF\\web.xml',0,15,16,42,28),(282,2,'/WEB-INF/web.xml',0,15,16,42,28),(283,2,'\\WEB-INF\\web.xml',0,15,16,42,28),(284,2,'thishouldnotexistandhopefullyitwillnot',0,15,16,42,28),(285,2,'altaprenda',0,15,16,42,28),(286,2,'/altaprenda',0,15,16,42,28),(287,2,'\\altaprenda',0,15,16,42,28),(288,2,'http://www.google.com/',0,15,16,42,28),(289,2,'http://www.google.com:80/',0,15,16,42,28),(290,2,'http://www.google.com',0,15,16,42,28),(291,2,'http://www.google.com/search?q=OWASP%20ZAP',0,15,16,42,28),(292,2,'http://www.google.com:80/search?q=OWASP%20ZAP',0,15,16,42,28),(293,2,'www.google.com/',0,15,16,42,28),(294,2,'www.google.com:80/',0,15,16,42,28),(295,2,'www.google.com',0,15,16,42,28),(296,2,'www.google.com/search?q=OWASP%20ZAP',0,15,16,42,28),(297,2,'www.google.com:80/search?q=OWASP%20ZAP',0,15,16,42,28),(298,2,'947160139641895802.owasp.org',0,15,16,42,28),(299,2,'http://947160139641895802.owasp.org',0,15,16,42,28),(300,2,'https://947160139641895802.owasp.org',0,15,16,42,28),(301,2,'https://947160139641895802%2eowasp%2eorg',0,15,16,42,28),(302,2,'5;URL=\'https://947160139641895802.owasp.org\'',0,15,16,42,28),(303,2,'http:\\\\947160139641895802.owasp.org',0,15,16,42,28),(304,2,'https:\\\\947160139641895802.owasp.org',0,15,16,42,28),(305,2,'//947160139641895802.owasp.org',0,15,16,42,28),(306,2,'\\\\947160139641895802.owasp.org',0,15,16,42,28),(307,2,'<!--#EXEC cmd=\"ls /\"-->',0,15,16,42,28),(308,2,'\"><!--#EXEC cmd=\"ls /\"--><',0,15,16,42,28),(309,2,'<!--#EXEC cmd=\"dir \\\"-->',0,15,16,42,28),(310,2,'\"><!--#EXEC cmd=\"dir \\\"--><',0,15,16,42,28),(311,2,'0W45pz4p',0,15,16,42,28),(312,2,'Chomba negra y roja0W45pz4p',0,15,16,42,28),(313,2,'\'\"<scrIpt>alert(1);</scRipt>',0,15,16,42,28),(314,2,'\'\"\0<scrIpt>alert(1);</scRipt>',0,15,16,42,28),(315,2,'\'\"<img src=x onerror=prompt()>',0,15,16,42,28),(316,2,'zApPX0sS',0,15,16,42,28),(317,2,'\'',0,15,16,42,28),(318,2,'Chomba negra y roja\'',0,15,16,42,28),(319,2,'\"',0,15,16,42,28),(320,2,'Chomba negra y roja\"',0,15,16,42,28),(321,2,';',0,15,16,42,28),(322,2,'Chomba negra y roja;',0,15,16,42,28),(323,2,'\'(',0,15,16,42,28),(324,2,'Chomba negra y roja\'(',0,15,16,42,28),(325,2,'Chomba negra y roja AND 1=1 -- ',0,15,16,42,28),(326,2,'Chomba negra y roja\' AND \'1\'=\'1\' -- ',0,15,16,42,28),(327,2,'Chomba negra y roja\" AND \"1\"=\"1\" -- ',0,15,16,42,28),(328,2,'Chomba negra y roja AND 1=1',0,15,16,42,28),(329,2,'Chomba negra y roja\' AND \'1\'=\'1',0,15,16,42,28),(330,2,'Chomba negra y roja\" AND \"1\"=\"1',0,15,16,42,28),(331,2,'Chomba negra y roja UNION ALL select NULL -- ',0,15,16,42,28),(332,2,'Chomba negra y roja\' UNION ALL select NULL -- ',0,15,16,42,28),(333,2,'Chomba negra y roja\" UNION ALL select NULL -- ',0,15,16,42,28),(334,2,'Chomba negra y roja) UNION ALL select NULL -- ',0,15,16,42,28),(335,2,'Chomba negra y roja\') UNION ALL select NULL -- ',0,15,16,42,28),(336,2,'\";print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110));$var=\"',0,15,16,42,28),(337,2,'\';print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110));$var=\'',0,15,16,42,28),(338,2,'${@print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110))}',0,15,16,42,28),(339,2,'${@print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110))}\\',0,15,16,42,28),(340,2,';print(chr(122).chr(97).chr(112).chr(95).chr(116).chr(111).chr(107).chr(101).chr(110));',0,15,16,42,28),(341,2,'\"+response.write([495.648*772.292)+\"',0,15,16,42,28),(342,2,'+response.write({0}*{1})+',0,15,16,42,28),(343,2,'response.write(495.648*772.292)',0,15,16,42,28),(344,2,'cat /etc/passwd',0,15,16,42,28),(345,2,'Chomba negra y roja&cat /etc/passwd&',0,15,16,42,28),(346,2,'Chomba negra y roja;cat /etc/passwd;',0,15,16,42,28),(347,2,'Chomba negra y roja\"&cat /etc/passwd&\"',0,15,16,42,28),(348,2,'Chomba negra y roja\";cat /etc/passwd;\"',0,15,16,42,28),(349,2,'Chomba negra y roja\'&cat /etc/passwd&\'',0,15,16,42,28),(350,2,'Chomba negra y roja\';cat /etc/passwd;\'',0,15,16,42,28),(351,2,'Chomba negra y roja&sleep 15&',0,15,16,42,28),(352,2,'Chomba negra y roja;sleep 15;',0,15,16,42,28),(353,2,'Chomba negra y roja\"&sleep 15&\"',0,15,16,42,28),(354,2,'Chomba negra y roja\";sleep 15;\"',0,15,16,42,28),(355,2,'Chomba negra y roja\'&sleep 15&\'',0,15,16,42,28),(356,2,'Chomba negra y roja\';sleep 15;\'',0,15,16,42,28),(357,2,'type %SYSTEMROOT%\\win.ini',0,15,16,42,28),(358,2,'Chomba negra y roja&type %SYSTEMROOT%\\win.ini',0,15,16,42,28),(359,2,'Chomba negra y roja|type %SYSTEMROOT%\\win.ini',0,15,16,42,28),(360,2,'Chomba negra y roja\"&type %SYSTEMROOT%\\win.ini&\"',0,15,16,42,28),(361,2,'Chomba negra y roja\"|type %SYSTEMROOT%\\win.ini',0,15,16,42,28),(362,2,'Chomba negra y roja\'&type %SYSTEMROOT%\\win.ini&\'',0,15,16,42,28),(363,2,'Chomba negra y roja\'|type %SYSTEMROOT%\\win.ini',0,15,16,42,28),(364,2,'Chomba negra y roja&timeout /T 15',0,15,16,42,28),(365,2,'Chomba negra y roja|timeout /T 15',0,15,16,42,28),(366,2,'Chomba negra y roja\"&timeout /T 15&\"',0,15,16,42,28),(367,2,'Chomba negra y roja\"|timeout /T 15',0,15,16,42,28),(368,2,'Chomba negra y roja\'&timeout /T 15&\'',0,15,16,42,28),(369,2,'Chomba negra y roja\'|timeout /T 15',0,15,16,42,28),(370,2,'get-help',0,15,16,42,28),(371,2,'Chomba negra y roja;get-help',0,15,16,42,28),(372,2,'Chomba negra y roja\";get-help',0,15,16,42,28),(373,2,'Chomba negra y roja\';get-help',0,15,16,42,28),(374,2,'Chomba negra y roja;get-help #',0,15,16,42,28),(375,2,'Chomba negra y roja;start-sleep -s 15',0,15,16,42,28),(376,2,'Chomba negra y roja\";start-sleep -s 15',0,15,16,42,28),(377,2,'Chomba negra y roja\';start-sleep -s 15',0,15,16,42,28),(378,2,'Chomba negra y roja;start-sleep -s 15 #',0,15,16,42,28),(380,2,'ZAP',0,15,16,42,28),(381,2,'ZAP%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s%n%s\n',0,15,16,42,28),(382,2,'ZAP %1!s%2!s%3!s%4!s%5!s%6!s%7!s%8!s%9!s%10!s%11!s%12!s%13!s%14!s%15!s%16!s%17!s%18!s%19!s%20!s%21!n%22!n%23!n%24!n%25!n%26!n%27!n%28!n%29!n%30!n%31!n%32!n%33!n%34!n%35!n%36!n%37!n%38!n%39!n%40!n\n',0,15,16,42,28),(383,2,'Set-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a',0,15,16,42,28),(384,2,'any\r\nSet-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a',0,15,16,42,28),(385,2,'any?\r\nSet-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a',0,15,16,42,28),(386,2,'any\nSet-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a',0,15,16,42,28),(387,2,'any?\nSet-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a',0,15,16,42,28),(388,2,'any\r\nSet-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a\r\n',0,15,16,42,28),(389,2,'any?\r\nSet-cookie: Tamper=73112742-e5e0-49a9-88a4-d08bbc55a27a\r\n',0,15,16,42,28),(390,2,'',0,15,16,42,28),(391,2,'@',0,15,16,42,28),(392,2,'+',0,15,16,42,28),(393,2,'\0',0,15,16,42,28),(394,2,'|',0,15,16,42,28);
+/*!40000 ALTER TABLE `prendas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `recordatorios`
+--
+
+DROP TABLE IF EXISTS `recordatorios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `recordatorios` (
+  `IdRecordatorio` int(11) NOT NULL,
+  `cantidadTiempo` bigint(20) DEFAULT NULL,
+  `IdTimeScale` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdRecordatorio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `recordatorios`
+--
+
+LOCK TABLES `recordatorios` WRITE;
+/*!40000 ALTER TABLE `recordatorios` DISABLE KEYS */;
+INSERT INTO `recordatorios` VALUES (148,1,1),(164,0,0),(182,5,0),(186,2,0),(189,1,0);
+/*!40000 ALTER TABLE `recordatorios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sugerencias`
+--
+
+DROP TABLE IF EXISTS `sugerencias`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `sugerencias` (
+  `IdSugerencia` int(11) NOT NULL,
+  `IdEstado` int(11) DEFAULT NULL,
+  `IdAtuendo` int(11) DEFAULT NULL,
+  `IdCalificacion` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdSugerencia`),
+  KEY `FKmdy27vr9pfwegvd9t1q36m0n5` (`IdAtuendo`),
+  KEY `FK7dfb9sswqvtct5k8bsdwf8xjv` (`IdCalificacion`),
+  CONSTRAINT `FK7dfb9sswqvtct5k8bsdwf8xjv` FOREIGN KEY (`IdCalificacion`) REFERENCES `calificaciones` (`IdCalificacion`),
+  CONSTRAINT `FKmdy27vr9pfwegvd9t1q36m0n5` FOREIGN KEY (`IdAtuendo`) REFERENCES `atuendos` (`IdAtuendo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sugerencias`
+--
+
+LOCK TABLES `sugerencias` WRITE;
+/*!40000 ALTER TABLE `sugerencias` DISABLE KEYS */;
+INSERT INTO `sugerencias` VALUES (150,2,91,163),(201,1,90,NULL),(212,2,103,NULL),(221,2,89,227);
+/*!40000 ALTER TABLE `sugerencias` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `telas`
+--
+
+DROP TABLE IF EXISTS `telas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `telas` (
+  `IdTela` int(11) NOT NULL,
+  `material` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`IdTela`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `telas`
+--
+
+LOCK TABLES `telas` WRITE;
+/*!40000 ALTER TABLE `telas` DISABLE KEYS */;
+INSERT INTO `telas` VALUES (42,'algodon'),(43,'cuero'),(44,'dryfit'),(45,'gabardina'),(46,'lana'),(47,'lona'),(48,'seda');
+/*!40000 ALTER TABLE `telas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tipos`
+--
+
+DROP TABLE IF EXISTS `tipos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `tipos` (
+  `IdTipo` int(11) NOT NULL,
+  `IdCateg` int(11) DEFAULT NULL,
+  `tipo` varchar(255) DEFAULT NULL,
+  `IdCapa` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdTipo`),
+  KEY `FK4mhknaaktwemxgobbah4xjuuh` (`IdCapa`),
+  CONSTRAINT `FK4mhknaaktwemxgobbah4xjuuh` FOREIGN KEY (`IdCapa`) REFERENCES `capa` (`IdCapa`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipos`
+--
+
+LOCK TABLES `tipos` WRITE;
+/*!40000 ALTER TABLE `tipos` DISABLE KEYS */;
+INSERT INTO `tipos` VALUES (19,1,'bermuda',6),(20,3,'bolso',7),(22,5,'bufanda',21),(23,1,'calzoncillo',4),(24,2,'camisa',6),(25,2,'camiseta',4),(27,2,'campera',26),(28,2,'chomba',5),(29,6,'guantes',7),(31,1,'jogging',30),(32,0,'medias',3),(33,3,'mochila',30),(34,2,'musculosa',5),(35,1,'pantalon',7),(36,5,'panuelo',7),(37,3,'paraguas',7),(38,1,'shors',5),(39,2,'sweater',1),(40,0,'zapatillas',30),(41,0,'zapatos',30);
+/*!40000 ALTER TABLE `tipos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ubicaciones`
+--
+
+DROP TABLE IF EXISTS `ubicaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ubicaciones` (
+  `IdUbicacion` int(11) NOT NULL,
+  `ciudad` varchar(255) DEFAULT NULL,
+  `idAccu` int(11) DEFAULT NULL,
+  PRIMARY KEY (`IdUbicacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ubicaciones`
+--
+
+LOCK TABLES `ubicaciones` WRITE;
+/*!40000 ALTER TABLE `ubicaciones` DISABLE KEYS */;
+INSERT INTO `ubicaciones` VALUES (137,'Avellaneda',7033),(138,'Buenos Aires',7894),(139,'Olivos',7261),(140,'Moron',7245),(141,'Cordoba',8869),(142,'Rosario',11222),(143,'Posadas',5168),(144,'Mendoza',5126),(145,'Ushuaia',6462),(146,'La Quiaca',4338),(147,'Mar Del Plata',7893);
+/*!40000 ALTER TABLE `ubicaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios`
+--
+
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios` (
+  `IdUsuario` int(11) NOT NULL,
+  `eMail` varchar(255) DEFAULT NULL,
+  `login` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `puntosCasual` int(11) DEFAULT NULL,
+  `puntosFormal` int(11) DEFAULT NULL,
+  `userName` varchar(255) DEFAULT NULL,
+  `IdCriterio` int(11) DEFAULT NULL,
+  `IdMembresia` int(11) DEFAULT NULL,
+  `esAdmin` tinyint(4) DEFAULT '0',
+  `pregSeguridad` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`IdUsuario`),
+  KEY `FKbeqnsrxeyoocjlam14ikai08o` (`IdCriterio`),
+  KEY `FK73bwgnu8nih7cqndm4ibwbawi` (`IdMembresia`),
+  CONSTRAINT `FK73bwgnu8nih7cqndm4ibwbawi` FOREIGN KEY (`IdMembresia`) REFERENCES `membresias` (`IdMembresia`),
+  CONSTRAINT `FKbeqnsrxeyoocjlam14ikai08o` FOREIGN KEY (`IdCriterio`) REFERENCES `criteriosusuario` (`IdCriterio`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios`
+--
+
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (83,'juanperez79@hotmail.com','juan','E10ADC3949BA59ABBE56E057F20F883E',6,4,'Juan Perez',84,85,0,'cualquiera'),(86,'jose.lopez@gmail.com','jose','58B4E38F66BCDB546380845D6AF27187',3,8,'Jose Lopez',87,88,1,'cualquiera'),(101,'ccomesa@gmail.com','admin','33EA82A46270EC81E833C4E093E5D24F',6,4,'Administrador',84,85,1,'sarasa admin'),(102,'manusanchez85@yahoo.com.ar','manuel','E10ADC3949BA59ABBE56E057F20F883E',9,2,'Manuel Sanchez',87,88,0,'sarasa sarasa');
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuarios_placards`
+--
+
+DROP TABLE IF EXISTS `usuarios_placards`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `usuarios_placards` (
+  `Usuario_IdUsuario` int(11) NOT NULL,
+  `placards_IdPlacard` int(11) NOT NULL,
+  KEY `FKlgnjef1yol6x6nfvidhgh3on6` (`placards_IdPlacard`),
+  KEY `FK6q2hwv7hhyewiny2hjbkt4qwt` (`Usuario_IdUsuario`),
+  CONSTRAINT `FK6q2hwv7hhyewiny2hjbkt4qwt` FOREIGN KEY (`Usuario_IdUsuario`) REFERENCES `usuarios` (`IdUsuario`),
+  CONSTRAINT `FKlgnjef1yol6x6nfvidhgh3on6` FOREIGN KEY (`placards_IdPlacard`) REFERENCES `placards` (`IdPlacard`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuarios_placards`
+--
+
+LOCK TABLES `usuarios_placards` WRITE;
+/*!40000 ALTER TABLE `usuarios_placards` DISABLE KEYS */;
+INSERT INTO `usuarios_placards` VALUES (83,80),(83,82),(86,80),(86,81),(86,82);
+/*!40000 ALTER TABLE `usuarios_placards` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-10-31  2:06:43

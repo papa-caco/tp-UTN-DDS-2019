@@ -1,3 +1,9 @@
-ALTER TABLE `TU_SCHEMA`.`usuarios` 
-ADD COLUMN `esAdmin` TINYINT NULL DEFAULT 0 AFTER `IdMembresia`,
-ADD COLUMN `pregSeguridad` VARCHAR(45) NULL AFTER `esAdmin`;
+ALTER TABLE usuarios 
+ADD COLUMN esAdmin TINYINT NULL DEFAULT 0 AFTER IdMembresia,
+ADD COLUMN pregSeguridad VARCHAR(45) NULL AFTER esAdmin;
+
+
+
+' OR 1=1 -- '
+
+(eMail,login,,puntosCasual,puntosFormal,userName,IdCriterio,IdMembresia,esAdmin,pregSegurid

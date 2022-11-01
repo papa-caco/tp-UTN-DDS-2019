@@ -44,6 +44,20 @@ public class HomeUsuarioController {
 		model.put("login", currentUser.getLogin());
 		return new ModelAndView(model, "/usuarioInicio.hbs");
 	}
+    
+    public ModelAndView showAdmin(Request req, Response res){
+    	Usuario currentUser = (Usuario)req.session().attribute("user");
+    	
+    	if (currentUser == null) {
+			res.status(500);
+			return new ModelAndView(null, "/error500-1.hbs");
+		}
+		
+		Map<String, Object> model = new HashMap<>();
+		model.put("userName", currentUser.getUserName());
+		model.put("login", currentUser.getLogin());
+		return new ModelAndView(model, "/usuarioInicioAdmin.hbs");
+	}
 
 	public ModelAndView listPlacards(Request request, Response response) {
 		Usuario currentUser = (Usuario)request.session().attribute("user");

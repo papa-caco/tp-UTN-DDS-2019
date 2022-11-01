@@ -21,11 +21,11 @@ public class Router implements WithGlobalEntityManager {
 		boolean localhost = true;
         
 		if (localhost) {
-            String projectDir = System.getProperty("user.dir");
-            String staticDir = "/src/main/resources/static/";
-            staticFiles.externalLocation(projectDir + staticDir);
+           // String projectDir = System.getProperty("user.dir");
+            // String staticDir = "/src/main/resources/static/";
+			staticFiles.externalLocation("C:/TP-SAW/");
         } else {
-            staticFiles.location("/public");
+        	staticFiles.location("C:/TP-SAW/public/");
         }
 		
 		Spark.get("/", HomeController::home, engine);
@@ -45,6 +45,7 @@ public class Router implements WithGlobalEntityManager {
 		Spark.get("/login-volver", AdminController::volverHome, engine);
 		Spark.get("/obtener-data-users", AdminController::getInfoUser, engine);
         Spark.get("/usuario", HomeUsuarioController.getInstance()::show, engine);
+        Spark.get("/usuarioAdmin", HomeUsuarioController.getInstance()::showAdmin, engine);
 		Spark.get("/placards", HomeUsuarioController.getInstance()::listPlacards, engine);
 		Spark.get("/altaprenda", HomeUsuarioController.getInstance()::mostrarAltaPrenda, engine);
 		Spark.post("/altaprenda", HomeUsuarioController.getInstance()::altaPrenda, engine);

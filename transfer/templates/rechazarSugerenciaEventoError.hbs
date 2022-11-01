@@ -1,0 +1,7 @@
+{{#partial "rechazarSugerenciaEventoError"}}
+	<p class="text-center" style="font-size: 1rem;color: red;">No se pudo rechazar <u>Sugerencia#</u><b>{{idSugerencia}}</b></p>
+		<div class="container text-center" id="botoncito">
+			<a href="/sugerencias/mostrarAccionesSugerencia/{{idSugerencia}}"><button type="button" class="btn btn-primary btn-sm">Continuar</button></a>
+		</div>
+{{/partial}}
+{{>mostrarAccionesSugerencia.html}}

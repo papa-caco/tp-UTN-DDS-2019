@@ -1,0 +1,31 @@
+body{
+	background: url(../img/wallpaper.jpg) no-repeat center center fixed;
+	background-size: cover;
+}
+
+a#a-menu{
+	color: white;
+}
+
+a#a-cs{
+	color: white;
+}
+.container{
+		margin-left:20px;
+}
+
+.container#botoncito{
+	margin-left:-15px;
+	opacity:.95;
+}
+
+.modal-content{
+	margin-top: 15px;
+	margin-left:0px;
+	background-color: #FDFAF5;
+	opacity: .75;
+	padding-top: 15px;
+	padding-left: 20px;
+	padding-bottom: 15px;
+
+}

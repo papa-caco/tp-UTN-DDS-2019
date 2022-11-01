@@ -1,0 +1,14 @@
+
+{{#partial "usuarioInicio"}}
+
+<div class="jumbotron">
+	<h4 class="display-4">Sistema QueMePongo</h4>
+	<p>En este canal podrás seleccionar tu indumentaria de manera  muy fácil </p> 
+	{{#each usuarios}}
+		<h1>Bienvenido <strong>{{userName}}</strong></h1>
+	{{/each}}
+</div>	
+
+{{/partial}}
+
+{{>usuario.html}}

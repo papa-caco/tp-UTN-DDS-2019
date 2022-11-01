@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>QueMePongo?? - Gestion de Eventos</title>
+
+	<!-- Required meta tags -->
+	<meta http-equiv="Content-Type" content="text/html"; charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<!-- Fontawesome icons -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+	<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+	<!-- Our own css -->
+	<link rel="stylesheet" type="text/css" href="public/usuario.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-toggler" id="a-menu"><span class="navbar-toggler-icon"></span> Home</a>
+	</nav>
+	<div class="container">
+		<div class="modal-content">
+			<h2>Gestión de Eventos</h2>
+		
+			<div class="row">
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/sheet.png" width="100px" height="100px" id="altaEvento">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/gestionEventos/altaEvento"><button type="button" class="btn btn-dark">Cargar Eventos</button></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/alarm-clock.png" width="100px" height="100px" id="proxEventos">
+						</div>
+					</div>
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/gestionEventos/getProximos?cantidad=10&page=first"><button type="button" class="btn btn-dark">Eventos Proximos</button></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/old-clock.png" width="100px" height="100px" id="eventosHistoricos">
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/gestionEventos/getHistoricos?cantidad=10&page=first"><button type="button" class="btn btn-dark">Eventos Históricos</button></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="col">
+					<div class="row">
+						<div class="col-6">
+							<img class="mx-auto d-block" 	src="public/feedback.png" width="100px" height="100px" id="calificarSugerencias">
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="container" id="botoncito">
+							<a href="/gestionEventos/getHistoricosCalificados?cantidad=10&page=first"><button type="button" class="btn btn-dark">Ver Calificaciones</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+		<div class="modal-content">
+			<h5><b>{{dateTimeActual}}</b> <b>{{usuarioActual}}:</b>  <u>Mis Eventos</u> - <u>Mostrando:</u> <b>{{cantPagina}}</b> - <u> de:</u> <b>{{totalEventos}}</b> - <u>Página</u> <b>{{paginaActual}}</b> <u>de</u> <b>{{totalPaginas}}</b></h5>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li class="page-item"><a class="page-link" href="/gestionEventos?cantidad=6&page=prev"><b><-Ant</b></a></li>
+						<div class="col-1">
+						<!--select class="form-control custom-select" id="cantElem" name="cantElem" required>
+							<option value="5">5</option>
+							<option value="1">10</option>
+							<option value="2">20</option>        								
+							<option value="3">50</option>
+							<option value="4">100</option>        								
+							<option value="">Todo</option>
+						</select-->
+						</div>
+						<li class="page-item"><a class="page-link" href="/gestionEventos?cantidad=6&page=next"><b>Sig-></b></a></li>
+					</ul>
+				</nav>
+			<div class="container text-center" id="botoncito">
+				<a href="/usuario"><button type="button" class="btn btn-dark">Volver al Menú principal</button></a>
+			</div>
+			<table class="table-sm">
+				<tbody>
+					<thead>
+						<tr>
+							<th>Fecha Evento</th>
+							<th>Ubicación</th>
+							<th>Carácter</th>
+							<th>Estado</th>
+							<th>Actividad</th>
+							<th></th>
+						</tr>
+					</thead>
+				    {{#each eventosUsuario}}
+					<tr>
+						<td>{{fechaHoraEvento}}</td>
+						<td>{{ubicacion}}</td>
+						<td>{{caracter}}</td>
+						<td>{{estado}}</td>
+						<td>{{actividad}}</td>
+						<td></td>
+					</tr>
+                    {{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	{{#block "usuarioInicio"}}
+	{{/block}}
+
+	<footer class="footer">
+		<p class="text-center">&copy; 2019 - Sistema QueMePongo - D.D.S. K3151  - Grupo n° 7</p>
+	</footer>
+</body>
+
+</html>

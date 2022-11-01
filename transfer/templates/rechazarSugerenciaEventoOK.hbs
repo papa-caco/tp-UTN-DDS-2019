@@ -1,0 +1,7 @@
+{{#partial "rechazarSugerenciaEventoOk"}}
+	<p class="text-center" style="font-size: 1rem;color: red;"><u>Sugerencia#</u><b>{{idSugerencia}}</b> rechazada correctamente</p>
+		<div class="container text-center" id="botoncito">
+			<a href="/sugerencias/mostrarAccionesSugerencia/{{idSugerencia}}?idEvt={{idEvento}}"><button type="button" class="btn btn-primary btn-sm">Continuar</button></a>
+		</div>
+{{/partial}}
+{{>mostrarAccionesSugerencia.html}}

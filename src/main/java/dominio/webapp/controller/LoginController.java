@@ -91,11 +91,13 @@ public class LoginController {
 			req.session().attribute("currentPageCalificados", 0);
 			req.session().attribute("currentPageSugerencias", 0);
 			Map<String, Object> model = new HashMap<>();
-		//	res.redirect("/usuario");
+			 //Damian comentó, no hacía el redireccionamiento.
 			if(currentUser.getEsAdmin().equals(0)) {
-				return new ModelAndView(model, "/usuario.html");
+				res.redirect("/usuario");
+				return new ModelAndView(model, "/usuarioInicio.hbs");
 			} 
-			return new ModelAndView(model, "/usuarioAdmin.html");
+			res.redirect("/usuarioAdmin");
+			return new ModelAndView(model, "/usuarioInicioAdmin.hbs");
 		}
 		return new ModelAndView(currentUser, "home/errorSesion.hbs");
 	}

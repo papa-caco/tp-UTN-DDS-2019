@@ -1,0 +1,7 @@
+{{#partial "borrarSugerenciaEventoError"}}
+	<p class="text-center" style="font-size: 1rem;color: red;">No se pudo borrar la Sugerencia# <b>{{idSuugerencia}}</b>< para el Evento# <b>{{idEvento}}</b></p>
+		<div class="container text-center" id="botoncito">
+			<a href="/gestionEventos/consultarSugerenciasEvento/{{idEvento}}"><button type="button" class="btn btn-primary btn-sm">Continuar</button></a>
+		</div>
+{{/partial}}
+{{>sugerenciasEvento.html}}
