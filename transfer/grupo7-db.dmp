@@ -539,7 +539,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (83,'juanperez79@hotmail.com','juan','E10ADC3949BA59ABBE56E057F20F883E',6,4,'Juan Perez',84,85,0,'cualquiera'),(86,'jose.lopez@gmail.com','jose','81DC9BDB52D04DC20036DBD8313ED055',3,8,'Jose Lopez',87,88,1,''),(101,'ccomesa@gmail.com','admin','33EA82A46270EC81E833C4E093E5D24F',6,4,'Administrador',84,85,1,'sarasa admin'),(102,'manusanchez85@yahoo.com.ar','manuel','E10ADC3949BA59ABBE56E057F20F883E',9,2,'Manuel Sanchez',87,88,0,'sarasa sarasa');
+INSERT INTO `usuarios` VALUES (83,'juanperez79@hotmail.com','juan','E10ADC3949BA59ABBE56E057F20F883E',6,4,'Juan Perez',84,85,0,'cualquiera'),(86,'jose.lopez@gmail.com','jose','81DC9BDB52D04DC20036DBD8313ED055',3,8,'Jose Lopez',87,88,1,''),(101,'ccomesa@gmail.com','admin','0EADFC740A2168D9864762465F670C95',6,4,'Administrador',84,85,1,'sarasa admin'),(102,'manusanchez85@yahoo.com.ar','manuel','E10ADC3949BA59ABBE56E057F20F883E',9,2,'Manuel Sanchez',87,88,0,'sarasa sarasa');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
